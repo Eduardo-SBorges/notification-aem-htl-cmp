@@ -1,16 +1,27 @@
-<div id="notification-container" data-endpoint="${properties.endpoint}">
-    <div id="notification-bell">
-        🔔
-        <span id="notification-count">0</span>
-    </div>
-    <div id="notification-panel" class="hidden">
-        <ul id="notification-list"></ul>
-    </div>
+<div
+  id="notification-container"
+  data-endpoint="${properties.endpoint}"
+>
+  <div id="notification-bell">
+    🔔
+    <span id="notification-count">0</span>
+  </div>
+  <div id="notification-panel" class="hidden">
+    <ul id="notification-list"></ul>
+  </div>
 </div>
 
-<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.all @ categories='notification'}" />
+<sly
+  data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.all @ categories='notification'}"
+/>
 
-<h1>Notication Demo Component</h1>
-<p>
-    Current endpoint: ${properties.endpoint}
-</p>
+<h1>Notification - Custom Component</h1>
+
+<sly data-sly-test="${!properties.endpoint}">
+  <p>There are no endpoints configured.</p>
+</sly>
+
+<sly data-sly-test="${properties.endpoint}">
+  <p>Current endpoint configured: <b>${properties.endpoint}</b></p>
+</sly>

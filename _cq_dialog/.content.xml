@@ -15,6 +15,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         fieldLabel="API Endpoint"
+                        value="https://jsonplaceholder.typicode.com/posts?_limit=5"
                         name="./endpoint"/>
                 </items>
             </column>
